@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        canvas {
+            background-color: azure;
+            border: 1px solid black;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 5%;
+            display: block;
+        }
+    </style>
+    <title>Canvas</title>
+
+
+</head>
+
+<body onload="onload()">
+    <div class="canvas-container">
+        <canvas width="800" height="800" id="canvas">
+
+        </canvas>
+    </div>
+</body>
+
+
+<script>
+
+
+    var canvas = document.getElementById('canvas');
+    if (canvas.getContext) {
+        var ctx = canvas.getContext('2d');
+
+        var ctx = canvas.getContext('2d');
+
+        var rectangle = new Path2D();
+        rectangle.rect(10, 10, 50, 50);
+
+        var circle = new Path2D();
+        circle.moveTo(125, 35);
+        circle.arc(100, 35, 25, 0, 2 * Math.PI);
+
+        ctx.stroke(rectangle);
+        ctx.fill(circle);
+    }
+
+</script>
+
+
+</html>

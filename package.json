@@ -1,0 +1,12 @@
+{
+  "name": "ngcanvas",
+  "version": "1.0.0",
+  "description": "Canvas Library for the Mordern Web, Made with Typescript",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Noman Hasan",
+  "license": "ISC"
+}

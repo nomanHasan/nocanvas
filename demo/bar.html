@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        canvas {
+            background-color: azure;
+            border: 1px solid black;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 5%;
+            display: block;
+        }
+    </style>
+    <title>Canvas</title>
+
+
+</head>
+
+<body onload="onload()">
+    <div class="canvas-container">
+        <canvas width="800" height="800" id="canvas">
+
+        </canvas>
+    </div>
+</body>
+
+
+<script>
+
+
+    var canvas = document.getElementById('canvas');
+    if (canvas.getContext) {
+        var ctx = canvas.getContext('2d');
+
+        init(ctx)
+    }
+
+
+    function init(ctx) {
+
+
+
+        let scores = [50, 60, 70, 80, 90]
+
+        console.log(scores.length)
+
+        let base = canvas.height - 200
+
+        ctx.fillStyle = "green"
+
+        let x = 10, y , width = 70, height;
+
+        for(let i = 0; i < scores.length; i ++){
+            
+
+            x += width + 20;
+            y = base - height
+
+            
+            height = scores[i] * 2
+
+
+            ctx.fillStyle = "blue"
+            ctx.fillRect(x, y, width, height)
+
+            ctx.fillStyle = "cyan"
+            ctx.beginPath()
+            ctx.arc(x + width/2, y, 20, Math.PI * 2, false)
+            ctx.fill()
+
+        }
+
+
+
+
+
+
+    }
+
+
+</script>
+
+
+</html>
