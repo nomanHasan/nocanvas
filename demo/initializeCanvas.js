@@ -1,7 +1,3 @@
-import { Rect, RectFactory } from './NCAN/Rect.js';
-import { ShapeFactory } from './NCAN/Shape.js';
-import { ColorFactory } from './NCAN/Color.js';
-import { NumberFactory } from './NCAN/Number.js';
 export var canvas = document.querySelector('canvas#canvas')
 export var context = canvas.getContext("2d")
 

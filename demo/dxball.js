@@ -1,9 +1,9 @@
-import { EventRegister } from './events/EventRegister.js';
+import { EventRegister } from '../dist/events/EventRegister.js';
 import {context, canvas, canvasWidth, canvasHeight} from './initializeCanvas.js'
-import { Layer } from './NCAN/Layer.js';
-import { Rect } from './NCAN/Rect.js';
-import { NumberFactory } from '../dw';
-import { ColorFactory } from './NCAN/Color.js';
+import { Layer } from '../dist/Layer.js';
+import { Rect } from '../dist/Rect.js';
+import { NumberFactory } from '../dist/Number.js';
+import { ColorFactory } from '../dist/Color.js';
 
 
 // canvas.height = 500

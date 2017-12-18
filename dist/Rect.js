@@ -1,18 +1,7 @@
-"use strict";
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var Point_js_1 = require("./Point.js");
-var Number_js_1 = require("./Number.js");
-var Rect = /** @class */ (function () {
-    function Rect(x, y, width, height, context, _zIndex) {
-        if (_zIndex === void 0) { _zIndex = 0; }
+import { PointFactory } from "./Point.js";
+import { NumberFactory } from "./Number.js";
+export class Rect {
+    constructor(x, y, width, height, context, _zIndex = 0) {
         this.x = x;
         this.y = y;
         this.width = width;
@@ -31,7 +20,7 @@ var Rect = /** @class */ (function () {
             }
         };
     }
-    Rect.prototype.draw = function () {
+    draw() {
         if (this.color) {
             if (this.fill) {
                 this.context.fillStyle = this.color;
@@ -50,62 +39,60 @@ var Rect = /** @class */ (function () {
                 .context
                 .strokeRect(this.x, this.y, this.width, this.height);
         }
-    };
-    Rect.prototype.isInside = function (pos) {
+    }
+    isInside(pos) {
         if ((pos.x > this.x && pos.y > this.y) && (pos.x < this.x + this.width && pos.y < this.y + this.height)) {
             return true;
         }
         else {
             return false;
         }
-    };
-    Rect.prototype.onmousemove = function (event) {
+    }
+    onmousemove(event) {
         if (this.mouseState.drag) {
             this.ondrag(event);
         }
-    };
-    Rect.prototype.ondrag = function (event) {
+    }
+    ondrag(event) {
         // console.log('RET DRAG', this._id)
         if (this.mouseState.drag) {
             this.x = event.x - this.mouseState.offset.x;
             this.y = event.y - this.mouseState.offset.y;
         }
         this.dispatchDraw();
-    };
-    Rect.prototype.dispatchDraw = function () {
+    }
+    dispatchDraw() {
         this["_layer"].draw();
-    };
-    Rect.prototype.onmousedown = function (event) {
+    }
+    onmousedown(event) {
         if (!this.isInside(event)) {
             return;
         }
         console.log(event);
         this.mouseState.drag = true;
-        this.mouseState.previous = __assign({}, event);
+        this.mouseState.previous = Object.assign({}, event);
         this.mouseState.offset.x = this.mouseState.previous.x - this.x;
         this.mouseState.offset.y = this.mouseState.previous.y - this.y;
         this.dispatchDraw();
-    };
-    Rect.prototype.onmouseup = function (evnet) {
+    }
+    onmouseup(evnet) {
         this.mouseState.drag = false;
         // console.log(this.mouseState)
         this.dispatchDraw();
-    };
-    Rect.prototype.onmouseleave = function () {
+    }
+    onmouseleave() {
         this.mouseState.drag = false;
         this.dispatchDraw();
-    };
-    return Rect;
-}());
-exports.Rect = Rect;
-exports.RectFactory = {
-    generateRandomRect: function (x, y, width, height, maxWidth, maxHeight) {
-        var point = Point_js_1.PointFactory.getRandomPoint(x, y, width, height);
-        var thiswidth = Number_js_1.NumberFactory.getRandomNumber(maxWidth);
-        var thisheight = Number_js_1.NumberFactory.getRandomNumber(maxHeight);
+    }
+}
+export const RectFactory = {
+    generateRandomRect: (x, y, width, height, maxWidth, maxHeight) => {
+        let point = PointFactory.getRandomPoint(x, y, width, height);
+        let thiswidth = NumberFactory.getRandomNumber(maxWidth);
+        let thisheight = NumberFactory.getRandomNumber(maxHeight);
         return new Rect(point.x, point.y, thiswidth, thisheight);
     },
-    draw: function (rect) {
+    draw: (rect) => {
         if (rect.color) {
             rect.context.fillStyle = rect.color;
         }

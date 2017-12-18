@@ -1,9 +1,7 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.MOUSE_MOVE = 'onmousemove';
-exports.MOUSE_ENTER = 'onmouseenter';
-exports.MOUSE_DOWN = 'onmousedown';
-exports.MOUSE_LEAVE = 'onmouseleave';
-exports.MOUSE_UP = 'onmouseup';
-exports.MOUSE_CLICK = 'onclick';
-exports.MOUSE_DBLCLICK = 'ondblclick';
+export const MOUSE_MOVE = 'onmousemove';
+export const MOUSE_ENTER = 'onmouseenter';
+export const MOUSE_DOWN = 'onmousedown';
+export const MOUSE_LEAVE = 'onmouseleave';
+export const MOUSE_UP = 'onmouseup';
+export const MOUSE_CLICK = 'onclick';
+export const MOUSE_DBLCLICK = 'ondblclick';
