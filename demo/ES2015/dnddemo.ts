@@ -1,9 +1,9 @@
-import { EventRegister } from '../dist/events/EventRegister.js';
-import {context, canvas, canvasWidth, canvasHeight} from './initializeCanvas.js'
-import { Layer } from '../dist/Layer.js';
-import { Rect } from '../dist/Rect.js';
-import { NumberFactory } from '../dist/Number.js';
-import { ColorFactory } from '../dist/Color.js';
+import { EventRegister } from '../src/events/EventRegister';
+import {context, canvas, canvasWidth, canvasHeight} from './initializeCanvas'
+import { Layer } from '../src/Layer';
+import { Rect } from '../src/Rect';
+import { NumberFactory } from '../src/Number';
+import { ColorFactory } from '../src/Color';
 
 
 // canvas.height = 500
@@ -60,7 +60,3 @@ console.log(gameLayer)
 
 
 gameLayer.draw()
-
-
-
-// console.log(gameLayer.shapes.map(shape => shape._zIndex))

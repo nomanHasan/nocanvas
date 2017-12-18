@@ -1,4 +1,4 @@
-import { NumberFactory } from "./Number.js";
+import { NumberFactory } from "./Number";
 
 export const PointFactory = {
     getRandomPoint: (x, y, width, height) => {

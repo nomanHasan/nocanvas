@@ -1,6 +1,6 @@
-import {PointFactory} from "./Point.js";
-import {NumberFactory} from "./Number.js";
-import { MouseState } from "./events/mouseState";
+import {PointFactory} from "./Point";
+import {NumberFactory} from "./Number";
+import { MouseState } from "./events/MouseState";
 
 export class Rect {
     fill: any;

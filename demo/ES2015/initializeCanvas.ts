@@ -1,4 +1,4 @@
-export var canvas = document.querySelector('canvas#canvas')
+export var canvas:HTMLCanvasElement = document.querySelector('canvas#canvas')
 export var context = canvas.getContext("2d")
 
 export var windowWidth = window.innerWidth
